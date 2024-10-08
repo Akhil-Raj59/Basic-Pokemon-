@@ -1,17 +1,19 @@
-import Pokedex from "./Components/Pokedex/Pokedex"
-import PokemonList from "./Components/PokemonList/PokemonList"
-import Search from "./Components/Search/Search"
-
+import { Link } from "react-router-dom";
+import CustomRoutes from "./routes/CustomRoutes";
 
 function App() {
-
   return (
-    <div className="flex flex-col justify-center items-center p-3 m-4 gap-4">
-      <h1 className="text-3xl font-semibold">Pokedex</h1>
-      <Search/>
-      <PokemonList />
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold text-orange-500 mb-6">
+        <Link to="/" className="hover:text-orange-400 transition-colors duration-300">
+          Pokedex
+        </Link>
+      </h1>
+      <div className="w-full">
+        <CustomRoutes />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
